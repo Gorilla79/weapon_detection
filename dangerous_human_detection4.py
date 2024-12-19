@@ -125,7 +125,7 @@ while True:
     if results_weapon[0].boxes:
         weapon_boxes = results_weapon[0].boxes
         weapon_confidences = weapon_boxes.conf.cpu().numpy()
-        boxes_weapon = weapon_boxes.xyxy.cpu().numpy()[weapon_confidences >= 0.7]  # Confidence threshold: 70%
+        boxes_weapon = weapon_boxes.xyxy.cpu().numpy()[weapon_confidences >= 0.5]  # Confidence threshold: 70%
     else:
         boxes_weapon = []
 
