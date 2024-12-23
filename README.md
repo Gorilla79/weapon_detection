@@ -11,8 +11,9 @@ depth 카메라의 깊이(Z값)과 YOLO에서의 바운딩 박스의 중심점 �
 추후 실제 위치를 반영할 수 있는 계산 식을 수정할 예정
 
 
-[추가해야 할 내용]
+[추가해야 할 내용]</br>
 중심점 좌표와 인근 10픽셀의 깊이 값의 평균 값을 depth값으로 활용
+
 
 def calculate_average_depth(center_x, center_y, depth_frame, window_size=3):
     depth_values = []
