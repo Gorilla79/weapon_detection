@@ -14,7 +14,8 @@ depth 카메라의 깊이(Z값)과 YOLO에서의 바운딩 박스의 중심점 �
 [추가해야 할 내용]</br>
 중심점 좌표와 인근 10픽셀의 깊이 값의 평균 값을 depth값으로 활용
 
-
+#### 코드:
+```python
 def calculate_average_depth(center_x, center_y, depth_frame, window_size=3):
     depth_values = []
     offset = window_size // 2  # 윈도우 크기 절반
@@ -23,6 +24,7 @@ def calculate_average_depth(center_x, center_y, depth_frame, window_size=3):
         for dy in range(-offset, offset + 1):
             sampled_depth = depth_frame.get_distance(center_x + dx, center_y + dy)
             if sampled_depth > 0:  # 유효한 깊이만 포함
+'''
                 depth_values.append(sampled_depth)
     
     if not depth_values:
